@@ -35,12 +35,8 @@ app.use((req, res, next) => {
   res.status(404).json({ message: "Route not found" });
 });
 
-connectToDatabase()
-  .then(() => {
+
     app.listen(port, () => {
       console.log(`Listening on port ${port}`.bgGreen);
     });
-  })
-  .catch((err) => {
-    console.log("Error connecting to database: ", err);
-  });
+
